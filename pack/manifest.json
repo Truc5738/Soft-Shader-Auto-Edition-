@@ -1,0 +1,29 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Soft Shader - Auto Edition",
+    "description": "Soft pastel biome color maps for Minecraft Bedrock 1.26.x. No commands, cheats, or Vibrant Visuals.",
+    "uuid": "fef83203-4745-41d8-bd6d-288a3cf817bc",
+    "version": [
+      1,
+      1,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      26,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "847a9d4c-8442-4188-a05a-757f99c10bee",
+      "version": [
+        1,
+        1,
+        0
+      ]
+    }
+  ]
+}
