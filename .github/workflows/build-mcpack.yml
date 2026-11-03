@@ -1,0 +1,35 @@
+name: Build Soft Shader MCpack
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "pack/**"
+      - "tools/**"
+      - ".github/workflows/build-mcpack.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check Pillow
+      - name: Build resource pack
+        run: python tools/generate_pack.py
+      - name: Upload MCpack
+        uses: actions/upload-artifact@v4
+        with:
+          name: Soft-Shader-Auto-MCpack
+          path: build/Soft-Shader-Auto.mcpack
+          if-no-files-found: error
+          retention-days: 30
